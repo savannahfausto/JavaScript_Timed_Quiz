@@ -4,11 +4,11 @@
         <title>JavaScript Quiz</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./Assets/css/style.css" />
     </head>
 
     <body>
-    <!--highscore button and timer stay at top of page-->
+    <!--highscore button and timer stay at top of page in header-->
         <header>
             <button class="button highscores" id="highscores">View Highscores</button>
             <div class= "timer-text">
@@ -25,7 +25,7 @@
                 <button class="button" id="start-button">Start Quiz</button>
             </section>
 
-            <!--section with class quiz is the placeholder area for where questions and answers will load-->
+            <!--section with class quiz-page is the placeholder area for where questions and answers will load dynamically-->
             <section class="quiz-page">
                 <div class="questions" id="questions"></div>
                 <div class="answers" id="answers">
@@ -33,6 +33,7 @@
                     <button class="button answer-btn" id="b"></button>
                     <button class="button answer-btn" id="c"></button>
                     <button class="button answer-btn" id="d"></button>
+                    <!--where answer verification (correct or wrong) will appear when user clicks on an answer button-->
                     <div class ="answer-type" id="answer-type"></div>
                 </div>
             </section>
@@ -40,25 +41,30 @@
             <!--section user-score-page appears when time runs out or user finishes questions; enter initials to be put on highscore board-->
             <section class="user-score-page">
                 <div id="gameover">
-                    <h3><!--if time === 0 game over, if finish questions: good game!--></h3>
+                    <h3 id="score-message"></h3>
                     <h4>Your final score is: <span id=final-score></span></h4>
                 </div>
                 <div class="enter-initials">
-                    <label for="initials">Enter initials:</label>
-                    <input type="text" name="initials" id="initals"/>
-                    <button id="submit-score">Submit Score</button>
+                    <h5>Enter your initials below and see how you rank compared to others!</h5>
+                    <form id="initials-form" method="POST">
+                        <label for="initials">Enter initials:</label>
+                        <input type="text" name="initials" id="initials"/>
+                        <button class= "button" type ="submit" id="submit-score">Submit Score</button>
+                    </form> 
                 </div>
             </section>
     
-            <!--When enter initials or click highscore go to highscore page-->
+            <!--section highscore-page appears when user clicks highscore button in header or submits initials form, contains saved highscores-->
             <section class="highscore-page">
                 <h2>Highscores:</h2>
-                <div id="initials-score"></div>
+                <div>
+                    <ul id="stored-initials-score"></ul>
+                </div>
                 <button class="button" id="restart">Go Back</button>
                 <button class="button" id="clear-highscores">Clear Highscores</button>
             </section>
         
         </main>
-        <script src="./js/script.js"></script>
+        <script src="./Assets/js/script.js"></script>
   </body>
 </html>

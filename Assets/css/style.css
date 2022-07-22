@@ -1,3 +1,4 @@
+/*color variables used throughout application*/
 :root {
     --light:  rgb(255, 255, 255);
     --eggplant:  rgb(91, 42, 164);
@@ -14,6 +15,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*keeps view high score button and timer fixed to the top of the page throughout the quiz*/
 header{
     width: 100%;
     position: fixed;
@@ -44,6 +46,25 @@ h1 {
     font-size: 40px;
 }
 
+/*li is dynamically added for each high score that is added/saved*/
+li {
+    width: 100%;
+    list-style: none;
+    color: var(--light);
+    line-height: 2;
+    font-size: 20px;
+    padding-left: 5px;
+}
+/*alternates color for every li added to the highscore page*/
+li:nth-child(even) {
+    background-color: var(--lilac);
+}
+
+li:nth-child(odd) {
+    background-color: var(--violet);
+}
+
+/*stylizes every button with class button*/
 .button {
     background-color: var(--eggplant);
     border: none;
@@ -72,11 +93,13 @@ h1 {
     margin-right: 20px;
 }
 
+/*creates a smaller area for p to contain itself in and forces it to wrap*/
 .start-page p {
     margin: 50px calc(25% - 14px);
     text-align: center;
 }
 
+/*when user first goes to page quiz-page section is hidden*/
 .quiz-page {
     display: none;
     
@@ -91,7 +114,7 @@ h1 {
     flex-direction: column;
     justify-content: left;
 }
-.answers button {
+.answers button, .highscore-page button {
     margin: 10px;
 }
 
@@ -99,10 +122,29 @@ h1 {
     margin-top: 10px;
     color:rgb(140, 98, 204);
 }
+
+/*when user first goes to page user-score-page section is hidden*/
 .user-score-page {
     display: none;
+    text-align: center;
 }
 
+.user-score-page h3, .user-score-page span {
+    font-size: 40px;
+    color:rgb(91, 42, 164);
+    margin: (10px 0);
+}
+
+.user-score-page h4 {
+    font-size: 30px;
+    color:rgb(140, 98, 204);
+}
+
+.enter-initials .button {
+    padding: 5px 10px;
+}
+
+/*when user first goes to page highscore-page section is hidden*/
 .highscore-page {
     display: none;
 }
