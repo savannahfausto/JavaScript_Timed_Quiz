@@ -36,4 +36,4 @@ The script.js file contains Web API concepts discussed in class such as:
 
 
 ## Link to Javascript Quiz Website: 
-[JavaScript Quiz Website](url)
+[JavaScript Quiz Website](https://savannahfausto.github.io/JavaScript_Timed_Quiz/)
